@@ -12,6 +12,8 @@ import jfyg.buttonfun.model.Square
 import jfyg.buttonfun.viewmodel.ButtonFunViewModel
 import jfyg.utils.deviceOrientation
 import kotlinx.android.synthetic.main.grid_container.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
@@ -61,7 +63,9 @@ class ButtonFunActivity : BaseActivity() {
 
     override fun onPause() {
         super.onPause()
-        dataManager.writeToFile(vm.squaresList.value ?: emptyList())
+        GlobalScope.launch {
+            dataManager.writeToFile(vm.squaresList.value ?: emptyList())
+        }
         vm.listState = ButtonFunViewModel.STATE_NONE
         vm.squaresList.removeObserver(squareslistObserver)
     }
