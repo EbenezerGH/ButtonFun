@@ -2,6 +2,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              android:id="@+id/iv_square"
              android:orientation="vertical"
-             android:layout_width="40dp"
-             android:layout_height="40dp"
+             android:layout_width="@dimen/square_size"
+             android:layout_height="@dimen/square_size"
              android:adjustViewBounds="false"/>
