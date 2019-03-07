@@ -1,0 +1,1 @@
+[![Build Status](https://travis-ci.com/EbenezerGH/ButtonFun.svg?token=z8cBzQiMB7d5QTSrDmYj&branch=master)](https://travis-ci.com/EbenezerGH/ButtonFun)
