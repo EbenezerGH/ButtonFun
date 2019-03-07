@@ -1,18 +1,22 @@
-package jfyg.buttonfun
+package jfyg.buttonfun.view
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.recyclerview.widget.RecyclerView
+import jfyg.buttonfun.R
+import jfyg.buttonfun.model.Square
 
-class ButtonFunRVAdapter(val listOfSquares: ArrayList<Square>) :
+class ButtonFunRVAdapter :
     RecyclerView.Adapter<ButtonFunRVAdapter.ViewHolder>() {
 
+    var listOfSquares: List<Square> = emptyList()
     var onItemClick: ((position: Int, layout: FrameLayout) -> Unit)? = null
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ButtonFunRVAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.item_button, parent, false)
+
         return ViewHolder(v)
     }
 
@@ -20,7 +24,7 @@ class ButtonFunRVAdapter(val listOfSquares: ArrayList<Square>) :
         return listOfSquares.size
     }
 
-    override fun onBindViewHolder(holder: ButtonFunRVAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(listOfSquares[position])
     }
 
@@ -34,7 +38,7 @@ class ButtonFunRVAdapter(val listOfSquares: ArrayList<Square>) :
         }
 
         fun bindItems(square: Square) {
-            layout.setBackgroundColor(square.randomColor())
+            layout.setBackgroundColor(square.color)
         }
     }
 
