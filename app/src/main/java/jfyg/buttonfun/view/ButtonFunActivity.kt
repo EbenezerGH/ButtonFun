@@ -50,7 +50,7 @@ class ButtonFunActivity : BaseActivity() {
     private fun adapterClickListener() {
         adapter.onItemClick = { position, layout ->
             Toast.makeText(this, "$position", Toast.LENGTH_SHORT).show()
-            layout.setBackgroundColor(Color.BLACK)
+            layout.setBackgroundColor(Color.TRANSPARENT)
             vm.spotClicked(position)
         }
     }

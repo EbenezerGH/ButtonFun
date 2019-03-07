@@ -65,7 +65,7 @@ class ButtonFunViewModel constructor(height: Float, width: Float) : ViewModel() 
 
     fun spotClicked(spot: Int) {
         listState = STATE_CHANGE_SQUARE
-        mutableSquaresList.value?.get(spot)?.color = Color.BLACK
+        mutableSquaresList.value?.get(spot)?.color = Color.TRANSPARENT
     }
 
     // calculate how many 40dp square will fit horizontally

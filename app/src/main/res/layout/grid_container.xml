@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-                                           android:id="@+id/rv_squares"
-                                           android:orientation="vertical"
-                                           android:layout_gravity="center_vertical"
-                                           android:layout_width="match_parent"
-                                           android:layout_height="match_parent">
-</androidx.recyclerview.widget.RecyclerView>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   android:layout_height="match_parent"
+                                                   android:layout_width="match_parent"
+                                                   android:background="@drawable/ic_homer">
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_squares"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:background="@null">
+
+    </androidx.recyclerview.widget.RecyclerView>
+</androidx.constraintlayout.widget.ConstraintLayout>
