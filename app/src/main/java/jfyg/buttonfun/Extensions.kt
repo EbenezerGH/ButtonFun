@@ -12,3 +12,17 @@ fun Int.intToListOfSquares(): List<Square> {
     }
     return a
 }
+
+fun List<Square>.toGsonString(): String {
+    val squaresListType = object : TypeToken<List<Square>>() {}.type
+    val gson = Gson()
+    val target: List<Square> = this
+    return gson.toJson(target, squaresListType)
+}
+
+fun String.toSquaresList(): List<Square> {
+    val gson = Gson()
+    val squaresListType = object : TypeToken<List<Square>>() {}.type
+    return gson.fromJson<List<Square>>(this, squaresListType)
+}
+
