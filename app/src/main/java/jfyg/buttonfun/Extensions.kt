@@ -1,16 +1,14 @@
 package jfyg.buttonfun
 
-import android.content.res.Resources
-import java.util.*
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import jfyg.buttonfun.model.Square
+import jfyg.utils.generateRandomColor
 
-val Int.dp: Int
-    get() = (this * Resources.getSystem().displayMetrics.density + 0.5f).toInt()
-
-val Float.dp: Int
-    get() = (this * Resources.getSystem().displayMetrics.density + 0.5f).toInt()
-
-fun Int.intToListOfSquares(): ArrayList<Square> {
-    val a = arrayListOf<Square>()
-    (1..this).forEach { i -> a.add(Square(i)) }
+fun Int.intToListOfSquares(): List<Square> {
+    val a = mutableListOf<Square>()
+    for (i in 0 until this) {
+        a.add(Square(generateRandomColor()))
+    }
     return a
 }
