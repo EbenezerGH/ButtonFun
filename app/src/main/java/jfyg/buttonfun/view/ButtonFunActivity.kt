@@ -40,9 +40,9 @@ class ButtonFunActivity : BaseActivity() {
     }
 
     private fun initRecyclerView() {
-        rv_buttons.layoutManager =
+        rv_squares.layoutManager =
             GridLayoutManager(this, vm.spanCountListener(this.deviceOrientation()))
-        rv_buttons.adapter = adapter
+        rv_squares.adapter = adapter
     }
 
     private fun adapterClickListener() {

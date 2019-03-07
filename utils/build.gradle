@@ -28,10 +28,13 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${project.kotlin_version}"
-    implementation "androidx.appcompat:appcompat:${project.xappcompat_version}"
-
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${project.kotlin_version}"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:${project.coroutines_version}"
+    api "com.google.code.gson:gson:${project.gson_version}"
+    api "org.koin:koin-android:${project.koin_di_version}"
+    api "org.koin:koin-android-viewmodel:${project.koin_di_version}"
     api "junit:junit:${project.junit_version}"
+
     androidTestImplementation "androidx.test:runner:${project.xtest_runner_version}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${project.xespresso_version}"
 }

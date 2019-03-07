@@ -31,19 +31,13 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${project.kotlin_version}"
     implementation "androidx.lifecycle:lifecycle-extensions:${project.xlifecycle_version}"
-    implementation "androidx.appcompat:appcompat:${project.xappcompat_version}"
     implementation "androidx.core:core-ktx:${project.xcore_version}"
+    implementation "androidx.appcompat:appcompat:${project.xappcompat_version}"
     implementation "androidx.constraintlayout:constraintlayout:${project.constraint_layout_version}"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${project.xviewmodel_version}"
     implementation "androidx.lifecycle:lifecycle-extensions:${project.xextensions_version}"
     implementation "androidx.recyclerview:recyclerview:${project.xrecyclerview_version}"
-
-    implementation "com.google.code.gson:gson:${project.gson_version}"
-
-    implementation "org.koin:koin-android:${project.koin_di_version}"
-    implementation "org.koin:koin-android-viewmodel:${project.koin_di_version}"
 
     api project(':utils')
 }
